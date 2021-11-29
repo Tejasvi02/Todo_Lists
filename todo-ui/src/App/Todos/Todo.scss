@@ -1,14 +1,63 @@
 .todo-container{
+    //todo container alignment
 margin-top: 100px;
-margin-left: 10px;
+margin-left: -30px;
 
 }
-
 .divcss{
     display: inline;
-    background-color: aqua;
+
 }
-h1:disabled{
-color: green;
+
+p{
+    font-size: 15px; //description format
+}
+
+#deletebtn{
+    //delete button format
+    border-radius: 5px;
+    width:auto;
+    height:auto;
+    font-size: 15px;
+    background-color: lightsteelblue;
+    border-color: grey;
+}
+#updatebtn{
+    border-radius: 5px;
+    width:auto;
+    height:auto;
+    font-size: 15px;
+    background-color: lightsteelblue;
+    border-color: grey;
+    margin-right: 20px;
+    margin-left: 10px;
+}
+#submitbtn{
+    border-radius: 5px;
+    width:auto;
+    height:auto;
+    font-size: 15px;
+    background-color: lightsteelblue;
+    border-color: grey;
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+button{
+    border-radius: 5px;
+    width:500px;
+    height: 40px;
+    background-color:white;
+    border-color: white;
+    border-style: none;
+    text-align: left;
+    font-size: 25px;
+    margin-left: -10px;
+
+}
+button:disabled{
+    //to mark as complete
+background:rgb(2, 196, 2);
+color:black;
 }
   

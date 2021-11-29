@@ -14,13 +14,21 @@ export class Todos extends React.Component {
             description:''
         }
     }
-
-    sample2(t,idx) {       
+/**
+ * 
+ * deletehandler is the function used for delete
+ * @param {*} t is the id of the todo item
+ * @param {*} idx is the index
+ */
+    deletehandler(t,idx) {       
         fetch('http://localhost:3001/todos/' + t, {
         method: 'DELETE'}).then(res => res.text()) // or res.json()     
         this.props.updateHandler(idx);
     }
-
+/**
+ * handleChange is Update function
+ * @param {*} id of the todo item
+ */
     handleChange = id => (e) => {       
         console.log("update"+id)        
         const url = 'http://localhost:3001/todos/'+ id;
@@ -95,8 +103,11 @@ export class Todos extends React.Component {
 
     changeHandler = e => {
         this.setState({[e.target.name]: e.target.value})
-    }    
-
+    }   
+ /**
+  * completehandler function is to disable the button and mark as complete
+  * @param {*} _id of the todo item
+  */
     completeHandler = _id => (e) => {
         let elem = [...document.getElementsByClassName(_id+"btn")];
         for(let i in elem)
@@ -141,11 +152,16 @@ export class Todos extends React.Component {
         }
     }
 
+    /**
+     * 
+     * @returns the rendered component
+     */
+
     render() {
         const todoElements = this.props.todos.map((c, i) => <div className = "divcss">
             <button className={c._id + "btn"} onClick={() => this.sample(c._id)} onDoubleClick={this.completeHandler(c._id)} key={i}>{c.title} </button> 
             
-            <p className={c._id + "p1"} hidden={true}>{c.description}</p>
+            <p className={c._id + "p1"} hidden={true} id>{c.description}</p>
             <p className={c._id + "createdate"} hidden={true}>{c.createdDate}</p>
             <p className={c._id + "updatedate"} hidden={true}>{c.lastModifiedDate}</p>
             
@@ -157,11 +173,12 @@ export class Todos extends React.Component {
                     <div>
                     <input type="text"  placeholder="description" name="description"  onChange={this.changeHandler}></input> 
                     </div>
-                    <button type="submit">submit</button>
+                    <button type="submit" id="submitbtn">submit</button>
                 </form>
                 </div>   
-            <button onClick={() =>this.renderForm(c._id)} className={c._id + "p2"}  hidden={true}> Update</button>             
-            <button onClick={() =>this.sample2(c._id, i)} className={c._id + "p3"} hidden={true}> Delete</button>
+            <button onClick={() =>this.renderForm(c._id)} className={c._id + "p2"} id="updatebtn"  hidden={true}> Update</button>  
+                      
+            <button onClick={() =>this.deletehandler(c._id, i)} className={c._id + "p3"} id="deletebtn" hidden={true}> Delete</button>
             <br /> 
             <br />   
             </div>);

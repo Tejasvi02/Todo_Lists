@@ -3,7 +3,10 @@ import React from 'react';
 import './Navbar.scss';
 
 export class Navbar extends React.Component {
-
+/**
+ * 
+ * @returns Navbar components
+ */
     render() {
         return <nav>
             <span className="menu"> </span>

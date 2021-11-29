@@ -8,7 +8,7 @@ import { Input } from './Input/Input';
 export class App extends React.Component{
 
   constructor(props){
-    super(props);
+    super(props); //calling constructor of parent
     this.state={
       showinput:false,      
       todos:[]
@@ -18,7 +18,9 @@ export class App extends React.Component{
   create(){
     this.setState({showinput:true});
   }
-
+/**
+ * Fetching all the todo items from the database
+ */
   getTodos(){
     fetch("http://localhost:3001/todos").then((response) =>response.json()).then((todos) => {
     this.setState({todos});
@@ -34,12 +36,15 @@ export class App extends React.Component{
   componentDidMount(){
     this.getTodos();
   }
-
+  /**
+   * 
+   * @returns the Navigation bar 
+   */
   render(){
     console.log(this.state.todos);
     return (      
           <div>          
-          <Navbar createHandler={this.create.bind(this)}> </Navbar>
+          <Navbar createHandler={this.create.bind(this)}> </Navbar> 
           <Todos todos={this.state.todos} updateHandler={this.removeElem.bind(this)}></Todos>
           {this.state.showinput?<Input> </Input>:null}
           </div>

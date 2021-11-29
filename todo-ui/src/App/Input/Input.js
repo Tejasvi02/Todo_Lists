@@ -11,14 +11,20 @@ export class Input extends React.Component {
           description:''
         }
       }
-    
+      
+    /**
+     * changeHandler is to capture the state of the form
+     */
       changeHandler = e => {
         this.setState({[e.target.name]: e.target.value})
       }
 
+/**
+ * submitHandler is used for POST
+ * @param {*} e is the event
+ */
       submitHandler = e =>{
       //e.preventDefault();
-      console.log("newwww");
       this.setState({[e.target.name]: e.target.value});
       console.log(this.state);
       const url = 'http://localhost:3001/todos';
@@ -38,7 +44,10 @@ fetch(url, options)
     console.log(response.status);
   });             
       }
-
+/**
+ * 
+ * @returns form for creating new todos
+ */
     
       render() {
         const {title,description} = this.state
@@ -49,7 +58,7 @@ fetch(url, options)
             <input type="text" placeholder="title"  name="title"  value={title} onChange={this.changeHandler}></input> </div>
             <div>
             <input type="text"  placeholder="description" name="description"  value={description} onChange={this.changeHandler}></input> </div>
-            <button type="submit">submit</button>
+            <button type="submit" id="submitbtn">submit</button>
 
             </form>
           </div>

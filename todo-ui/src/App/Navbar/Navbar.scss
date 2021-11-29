@@ -1,27 +1,25 @@
+//navbar styles
 nav{
-
+    top:0%;
     height :70px;
     width: 100%;
     position: fixed;
-    top:0;
     background-color:rgb(216, 123, 158);
+}
    
-
-    .menu{
-        float:left;
-        margin-left: 20px;
-    }
-
     .title{
        margin: auto;
+       text-align: center;
+       font-size: 55px;
     }
     .create{
         float: right;
         margin-right: 20px;
+        margin-top: -40px;
     }
     img{
 
         width: 20px;
         height: 20px;
     }
-}
+ 

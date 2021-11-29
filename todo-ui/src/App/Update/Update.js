@@ -8,8 +8,7 @@ export class Update extends React.Component{
     this.setState({[e.target.name]: e.target.value})
   }
 
-  
-
+ 
 
     render() {
         const {title,description} = this.state
