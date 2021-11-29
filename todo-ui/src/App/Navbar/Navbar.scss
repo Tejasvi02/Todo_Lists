@@ -1,0 +1,27 @@
+nav{
+
+    height :70px;
+    width: 100%;
+    position: fixed;
+    top:0;
+    background-color:rgb(216, 123, 158);
+   
+
+    .menu{
+        float:left;
+        margin-left: 20px;
+    }
+
+    .title{
+       margin: auto;
+    }
+    .create{
+        float: right;
+        margin-right: 20px;
+    }
+    img{
+
+        width: 20px;
+        height: 20px;
+    }
+}
