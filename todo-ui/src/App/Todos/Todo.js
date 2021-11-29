@@ -11,7 +11,9 @@ export class Todos extends React.Component {
         this.renderForm=this.renderForm.bind(this);
         this.state = {
             title:'',
-            description:''
+            description:'',
+            duedatetime:''
+
         }
     }
 /**
@@ -163,7 +165,7 @@ export class Todos extends React.Component {
             
             <p className={c._id + "p1"} hidden={true} id>{c.description}</p>
             <p className={c._id + "createdate"} hidden={true}>{c.createdDate}</p>
-            <p className={c._id + "updatedate"} hidden={true}>{c.lastModifiedDate}</p>
+            <p className={c._id + "updatedate"} hidden={true}>{c.duedatetime}</p>
             
                 <div>
                 <form hidden={true} className={c._id + "form"} onSubmit={this.handleChange(c._id)}>
@@ -172,6 +174,9 @@ export class Todos extends React.Component {
                     </div>
                     <div>
                     <input type="text"  placeholder="description" name="description"  onChange={this.changeHandler}></input> 
+                    </div>
+                    <div>
+                    <input type="text" placeholder="duedate and time"  name="duedatetime"  onChange={this.changeHandler}></input> 
                     </div>
                     <button type="submit" id="submitbtn">submit</button>
                 </form>

@@ -8,7 +8,8 @@ export class Input extends React.Component {
         super(props);
         this.state = {
           title:'',
-          description:''
+          description:'',
+          duedatetime:''
         }
       }
       
@@ -50,14 +51,18 @@ fetch(url, options)
  */
     
       render() {
-        const {title,description} = this.state
+        const {title,description,duedatetime} = this.state
         return (
           <div>
             <form onSubmit={this.submitHandler}>
               <div>
             <input type="text" placeholder="title"  name="title"  value={title} onChange={this.changeHandler}></input> </div>
             <div>
-            <input type="text"  placeholder="description" name="description"  value={description} onChange={this.changeHandler}></input> </div>
+            <input type="text"  placeholder="description" name="description"  value={description} onChange={this.changeHandler}></input> 
+            </div>
+            <div>
+              <input type="text" placeholder="duedate and time"  name="duedatetime" value={duedatetime} onChange={this.changeHandler}></input> 
+            </div>
             <button type="submit" id="submitbtn">submit</button>
 
             </form>
